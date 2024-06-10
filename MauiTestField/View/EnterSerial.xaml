@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    
+<pages:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:RGPopup.Maui.Pages;assembly=RGPopup.Maui"
+             x:Class="MauiTestField.Views.EnterSerial" CloseWhenBackgroundIsClicked="False">
+    
+    <Frame CornerRadius="20" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="DarkGray">
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{DynamicResource Key=PopUpBackground}">
+            <Label Text="Enter the serial number:" HorizontalOptions="Center" VerticalOptions="Center">
+                <!--Thanks to Stephane Delcroix - profile (https://stackoverflow.com/users/1063783/stephane-delcroix) - question - https://stackoverflow.com/questions/31403418/how-to-set-fontattributes-within-xaml-to-both-bold-and-italic-->
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="FontAttributes" Value="Bold, Italic" />
+                    </Style>
+                </Label.Style>
+            </Label>
+            <Entry x:Name="tbSerial" Keyboard="Numeric" VerticalOptions="Center"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                <Button x:Name="btnConnect" Text="Connect" Padding="10,10,10,10"/>
+                <Button x:Name="btnClose" Text="Close" Padding="10,10,10,10"/>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>
+            

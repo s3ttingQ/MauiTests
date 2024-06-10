@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:RGPopup.Maui.Pages;assembly=RGPopup.Maui" 
+             xmlns:internals="clr-namespace:Microsoft.Maui.Controls.Internals;assembly=Microsoft.Maui.Controls"
+             x:Class="MauiTestField.AlertPopUp" CloseWhenBackgroundIsClicked="False">
+
+    <Frame CornerRadius="20" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{DynamicResource Key=PopUpBackground}">
+        <StackLayout Orientation="Vertical" Margin="0,0,0,20" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{DynamicResource Key=PopUpBackground}">
+            <Label x:Name="lblTitle" HorizontalOptions="Center" VerticalOptions="Center">
+                <!--Thanks to Stephane Delcroix - profile (https://stackoverflow.com/users/1063783/stephane-delcroix) - question - https://stackoverflow.com/questions/31403418/how-to-set-fontattributes-within-xaml-to-both-bold-and-italic-->
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="FontAttributes" Value="Bold, Italic" />
+                    </Style>
+                </Label.Style>
+            </Label>
+
+            <Label x:Name="lblMsg" HorizontalOptions="Center" VerticalOptions="Center" Margin="10,10,10,10"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="10,10,10,10">
+                <Button x:Name="btnOK" Padding="10,10,10,10"/>
+                <Button x:Name="btnCancel" Padding="10,10,10,10"/>
+            </StackLayout>
+
+            <Button x:Name="btnClose" Text="Close" Margin="0,10,0,0" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>
+    
